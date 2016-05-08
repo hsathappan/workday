@@ -17,8 +17,12 @@ public class RangeContainerImpl implements RangeContainer {
 	/**
 	 * 
 	 */
-	public RangeContainerImpl(long[] data) {
+	private RangeContainerImpl(long[] data) {
 		this.data = data;
+	}
+	
+	public static RangeContainer create(long[] data) {
+		return new RangeContainerImpl(data);
 	}
 
 	@Override

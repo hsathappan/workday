@@ -18,7 +18,8 @@ public class RangeContainerFactoryImpl implements RangeContainerFactory {
 
 	@Override
 	public RangeContainer createContainer(long[] data) {
-		return new RangeContainerImpl(data);
+		//return RangeContainerImpl.create(data);
+		return MapReduceRangeContainer.create(data);
 	}
 
 }
