@@ -14,14 +14,12 @@ public class MapReduceRangeContainer implements RangeContainer {
 	private static short MAPPER_DATA_SIZE = 1000;
 	//private static short MAPPER_DATA_SIZE = 2;
 	
-	//long[] data;
 	List<Mapper> mapperList;
 	
 	private MapReduceRangeContainer(long[] data) {
-		if (data.length > 32000) {
-			throw new IllegalArgumentException("data > 32k");
+		if (data == null || data.length > 32000 || data.length == 0) {
+			throw new IllegalArgumentException("number of elements of input data should be in the range 1 <= n <= 32k");
 		}
-		//this.data = data;
 		mapperList = createMappers(data);
 		
 	}

@@ -18,10 +18,13 @@ public class RangeContainerImpl implements RangeContainer {
 	 * 
 	 */
 	private RangeContainerImpl(long[] data) {
-		this.data = data;
+		this.data = data.clone();
 	}
 	
 	public static RangeContainer create(long[] data) {
+		if (data == null || data.length > 32000 || data.length == 0) {
+			throw new IllegalArgumentException("number of elements of input data should be in the range 1 <= n <= 32k");
+		}
 		return new RangeContainerImpl(data);
 	}
 
