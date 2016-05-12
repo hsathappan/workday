@@ -3,6 +3,11 @@ package com.workday;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Implementation of the Ids interface using a list
+ * @author hsathappan
+ *
+ */
 public class IdsImpl implements Ids {
 
 	List<Short> idList;

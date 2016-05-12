@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * The basic RangeContainer implementation which does a linear search on the data
  * @author hsathappan
  *
  */
@@ -14,9 +15,6 @@ public class RangeContainerImpl implements RangeContainer {
 
 	private long[] data;
 	
-	/**
-	 * 
-	 */
 	private RangeContainerImpl(long[] data) {
 		this.data = data.clone();
 	}
@@ -28,6 +26,9 @@ public class RangeContainerImpl implements RangeContainer {
 		return new RangeContainerImpl(data);
 	}
 
+	/**
+	 * does a linear search
+	 */
 	@Override
 	public Ids findIdsInRange(long fromValue, long toValue,
 			boolean fromInclusive, boolean toInclusive) {
@@ -40,6 +41,7 @@ public class RangeContainerImpl implements RangeContainer {
 		return new IdsImpl(idList);
 	}
 
+	// checks to see if the value is in the given range
 	private boolean inRange(long value, long fromValue, long toValue,
 			boolean fromInclusive, boolean toInclusive) {
 		boolean isAboveLowerRange = fromInclusive ? value >= fromValue : value > fromValue;

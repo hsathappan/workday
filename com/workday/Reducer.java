@@ -3,7 +3,11 @@ package com.workday;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-
+/**
+ * Invokes the range query on each mapper to return the result of the subset data in the mapper.
+ * @author hsathappan
+ *
+ */
 public final class Reducer implements Callable<List<Short>> {
 
 	private Mapper mapper;

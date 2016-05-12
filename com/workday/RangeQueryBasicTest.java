@@ -154,6 +154,12 @@ public class RangeQueryBasicTest {
 			assertEquals(i, ids.nextId());
 		}
 		assertEquals(Ids.END_OF_IDS, ids.nextId());
+		
+		ids = benchMark(rcLarge, noOfRuns, 0, 32000, false, false);
+		for (int i = 1; i < 32000; i++) {
+			assertEquals(i, ids.nextId());
+		}
+		assertEquals(Ids.END_OF_IDS, ids.nextId());
 	}
 	
 	private Ids benchMark(RangeContainer rc, int noOfRuns, long fromValue, long toValue, boolean fromInclusive, boolean toInclusive) {

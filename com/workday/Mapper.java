@@ -3,6 +3,11 @@ package com.workday;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Mapper for the map-reduce algorithm which has a subset of the input data
+ * @author hsathappan
+ *
+ */
 public final class Mapper {
 
 	int mapperNumber;
@@ -13,6 +18,14 @@ public final class Mapper {
 		this.data = data;
 	}
 	
+	/**
+	 * Finds the ids in range on the subset of the data using linear search
+	 * @param fromValue
+	 * @param toValue
+	 * @param fromInclusive
+	 * @param toInclusive
+	 * @return
+	 */
 	public List<Short> findIdsInRange(long fromValue, long toValue,
 			boolean fromInclusive, boolean toInclusive) {
 		List<Short> idList = new LinkedList<>();
@@ -26,6 +39,7 @@ public final class Mapper {
 		return idList;
 	}
 	
+	// determines if the given value is in range
 	private boolean inRange(long value, long fromValue, long toValue,
 			boolean fromInclusive, boolean toInclusive) {
 		boolean isAboveLowerRange = fromInclusive ? value >= fromValue : value > fromValue;

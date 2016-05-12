@@ -4,16 +4,14 @@
 package com.workday;
 
 /**
+ * RangeContainerFactory implementation which creates the immutable RangeContainer
  * @author hsathappan
  *
  */
 public class RangeContainerFactoryImpl implements RangeContainerFactory {
 
-	/**
-	 * 
-	 */
 	public RangeContainerFactoryImpl() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
